@@ -50,5 +50,6 @@ to make website more usable and purposeful for the user e.g a front-end download
 45. ^ means in RegExp start and $ means end. further detail see in above 44 point file.
 46. Authorization and Authentication folder. install these packages: npm i passport passport-local passport-local-mongoose mongoose express-session.
 47. app.js code first after view engine before logger. setup user.js properly. index.js try register first then other code.
-48. 
+48. data association means data have each  id from that you can identify which data belongs to whom. for example a post   will have a specific id and and user will have a  specific id and both will have  each other id , so from that we can identify whom that data belongs.
+49. mixing the model's data through id of each other.
 
