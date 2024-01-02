@@ -16,3 +16,31 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 module.exports = upload;
+
+/* index.js code for multer
+
+
+const upload = require("./multer");
+
+
+
+//handle file upload                             //this file below name come from profile.ejs name = "file"
+router.post('/upload', isLoggedIn ,upload.single('file'), async (req, res) => {
+  //access the uploaded file details via req.file
+  if (!req.file) {
+    return res.status(400).send('No files were uploaded.')
+  }
+  const user = await userModel.findOne({username: req.session.passport.user}); //username getting save in user here
+  const post = await postModel.create({
+    image: req.file.filename,  //all name taken from post.js
+    imageText: req.body.filecaption,
+    user: user._id
+  });  //creating post
+  user.posts.push(post._id);  //giving post id to user.js
+  await user.save(); //noww the data save in moongodb
+  res.redirect('/profile');
+});
+
+
+
+*/
